@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NovaNest Pro – NovaNest</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="Startseite NovaNest">
+      <img class="brand__logo" src="../assets/img/logo.svg" alt="" aria-hidden="true" />
+      <span class="brand__name">NovaNest</span>
+    </a>
+
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-list">
+        <li><a href="../index.html" data-nav="home">Start</a></li>
+        <li><a href="../shop/index.html" data-nav="shop">Shop</a></li>
+        <li><a href="../cart/index.html" data-nav="cart">Warenkorb</a></li>
+        <li><a href="../about-us/index.html" data-nav="about">About us</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn--ghost" href="../cart/index.html" aria-label="Zum Warenkorb">
+        Warenkorb <span id="cartCount" class="badge" aria-label="Artikel im Warenkorb">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+  <main id="main" class="container" tabindex="-1">
+    
+<nav aria-label="Breadcrumb" class="small">
+  <a href="./index.html">Shop</a> / <span>novanest-pro</span>
+</nav>
+
+<section class="product-hero" aria-labelledby="prodTitle">
+  <div>
+    <img id="prodImg" src="" alt="" />
+  </div>
+  <div>
+    <h1 id="prodTitle"></h1>
+    <p id="prodShort"></p>
+    <p class="price" id="prodPrice"></p>
+    <p class="small" id="prodBilling"></p>
+
+    <div class="notice" style="margin: .75rem 0;">
+      <p><strong>Hinweis:</strong> Das ist ein Demo-Webshop. Keine echte Zahlung, keine echte Lieferung.</p>
+    </div>
+
+    <div class="field" style="max-width: 220px;">
+      <label for="qty">Menge</label>
+      <input id="qty" type="number" min="1" value="1" />
+    </div>
+
+    <button class="btn" type="button" id="addBtn">In den Warenkorb</button>
+    <p class="small" id="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<hr />
+
+<section aria-labelledby="featTitle">
+  <h2 id="featTitle">Funktionen</h2>
+  <ul class="bullets" id="prodFeatures"></ul>
+</section>
+
+<hr />
+
+<section aria-labelledby="licenseHintTitle">
+  <h2 id="licenseHintTitle">Lizenzhinweis</h2>
+  <p>Mit dem Kauf erhältst du ein Nutzungsrecht gemäß unserer <a href="../licenses/index.html">Lizenz</a> (Demo-Text).</p>
+</section>
+
+<script type="module">
+  import { findProductBySlug } from "../js/products.js";
+  import { addToCart } from "../js/cart.js";
+
+  const slug = "novanest-pro";
+  const p = findProductBySlug(slug);
+
+  const money = (n) => n.toFixed(2).replace(".", ",") + " €";
+
+  document.getElementById("prodTitle").textContent = p.name;
+  document.getElementById("prodShort").textContent = p.short + " Zielgruppe: " + p.audience + ".";
+  document.getElementById("prodPrice").textContent = money(p.price);
+  document.getElementById("prodBilling").textContent = p.billing;
+
+  const img = document.getElementById("prodImg");
+  img.src = p.media.img;
+  img.alt = p.media.alt;
+
+  document.getElementById("prodFeatures").innerHTML = p.features.map(f => `<li>${f}</li>`).join("");
+
+  const status = document.getElementById("status");
+  document.getElementById("addBtn").addEventListener("click", () => {
+    const qty = Math.max(1, Number(document.getElementById("qty").value) || 1);
+    addToCart(p, qty);
+    status.textContent = `Hinzugefügt: ${qty}× ${p.name}.`;
+  });
+</script>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container footer-inner">
+    <nav aria-label="Footer Navigation">
+      <ul class="footer-links">
+        <li><a href="../accessibility/index.html">Barrierefreiheit</a></li>
+        <li><a href="../licenses/index.html">Lizenz</a></li>
+        <li><a href="../privacy/index.html">Datenschutz</a></li>
+        <li><a href="../contact/index.html">Kontakt</a></li>
+        <li><a href="../imprint/index.html">Impressum &amp; Offenlegung</a></li>
+        <li><a href="../credits/index.html">Credits</a></li>
+      </ul>
+    </nav>
+    <p class="small">© <span id="year"></span> NovaNest – Demo-Webshop</p>
+  </div>
+</footer>
+
+<div id="cookieBanner" class="cookie-banner" aria-hidden="true" role="region" aria-label="Cookie Hinweis">
+  <p><strong>Cookies (Demo):</strong> Diese Website nutzt im Demo-Modus optionale Analyse-Cookies. Du kannst zustimmen oder ablehnen.</p>
+  <p class="small">Mehr Infos in der <a href="../privacy/index.html">Datenschutzerklärung</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn" type="button" data-consent="accepted">Zustimmen</button>
+    <button class="btn btn--ghost" type="button" data-consent="rejected">Ablehnen</button>
+  </div>
+</div>
+
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>

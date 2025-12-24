@@ -1,0 +1,89 @@
+/* Base: minimal, accessible, consistent */
+:root{
+  --bg: #ffffff;
+  --text: #0b1220;
+  --muted: #2b3348;
+  --surface: #f6f7fb;
+  --border: #d8dbe6;
+  --primary: #23306a;
+  --primary-2: #0b1220;
+  --radius: 16px;
+  --maxw: 1100px;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height:1.5;
+  color:var(--text);
+  background:var(--bg);
+}
+
+img{ max-width:100%; height:auto; }
+a{ color: var(--primary); }
+a:hover{ text-decoration: underline; }
+a:focus-visible{ outline:3px solid #000; outline-offset:3px; }
+
+.container{ max-width: var(--maxw); margin: 0 auto; padding: 0 1rem; }
+
+.skip-link{
+  position:absolute; left:-999px; top:0;
+  padding:.75rem 1rem; background:#fff; border:2px solid #000; z-index:9999;
+}
+.skip-link:focus{ left: 1rem; top: 1rem; }
+
+:focus-visible{ outline:3px solid #000; outline-offset:3px; }
+
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+.small{ font-size: .9rem; color: var(--muted); }
+
+/* Header / Footer */
+.site-header{
+  border-bottom:1px solid var(--border);
+  background: #fff;
+}
+.header-inner{
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  justify-content:space-between;
+  padding: .75rem 0;
+}
+.brand{ display:flex; align-items:center; gap:.6rem; text-decoration:none; color:var(--text); }
+.brand__logo{ width:34px; height:34px; }
+.brand__name{ font-weight: 800; letter-spacing: .2px; }
+
+.nav-list{ list-style:none; display:flex; gap:.75rem; margin:0; padding:0; flex-wrap:wrap; }
+.nav-list a{
+  display:inline-block;
+  padding:.4rem .6rem;
+  border-radius: 999px;
+  text-decoration:none;
+}
+.nav-list a[aria-current="page"]{
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.site-footer{
+  margin-top: 3rem;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+.footer-inner{ padding: 1.25rem 0; display:flex; flex-direction:column; gap: .75rem; }
+.footer-links{ list-style:none; display:flex; gap:.9rem; flex-wrap:wrap; padding:0; margin:0; }
+.footer-links a{ text-decoration:none; }
+.footer-links a:hover{ text-decoration: underline; }
+
+/* Content */
+main{ padding: 1.25rem 0 2rem; }
+h1{ font-size: clamp(1.7rem, 2.6vw, 2.5rem); line-height:1.15; }
+h2{ font-size: 1.35rem; }
+p{ max-width: 75ch; }

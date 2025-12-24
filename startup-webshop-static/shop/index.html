@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop – NovaNest</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="Startseite NovaNest">
+      <img class="brand__logo" src="../assets/img/logo.svg" alt="" aria-hidden="true" />
+      <span class="brand__name">NovaNest</span>
+    </a>
+
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-list">
+        <li><a href="../index.html" data-nav="home">Start</a></li>
+        <li><a href="../shop/index.html" data-nav="shop">Shop</a></li>
+        <li><a href="../cart/index.html" data-nav="cart">Warenkorb</a></li>
+        <li><a href="../about-us/index.html" data-nav="about">About us</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn--ghost" href="../cart/index.html" aria-label="Zum Warenkorb">
+        Warenkorb <span id="cartCount" class="badge" aria-label="Artikel im Warenkorb">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+  <main id="main" class="container" tabindex="-1">
+    
+<h1>Shop</h1>
+<p>Alle Käufe sind Demo-Transaktionen. Der Warenkorb wird im Browser gespeichert (LocalStorage).</p>
+
+<section aria-labelledby="shopListTitle">
+  <h2 id="shopListTitle" class="sr-only">Produktliste</h2>
+  <div id="productGrid" class="grid" role="list"></div>
+</section>
+
+<script type="module">
+  import { PRODUCTS } from "../js/products.js";
+  import { addToCart } from "../js/cart.js";
+
+  const grid = document.getElementById("productGrid");
+
+  function money(n){ return n.toFixed(2).replace(".", ",") + " €"; }
+
+  grid.innerHTML = PRODUCTS.map(p => `
+    <article class="card" role="listitem">
+      <img src="${p.media.img}" alt="${p.media.alt}" loading="lazy" />
+      <h2><a href="./${p.slug}.html">${p.name}</a></h2>
+      <p>${p.short}</p>
+      <p class="price">${money(p.price)}</p>
+      <button class="btn" type="button" data-add="${p.id}">In den Warenkorb</button>
+    </article>
+  `).join("");
+
+  grid.addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-add]");
+    if (!btn) return;
+    const product = PRODUCTS.find(x => x.id === btn.dataset.add);
+    addToCart(product, 1);
+    // Badge wird über main.js/cart.js automatisch aktualisiert
+    btn.textContent = "Hinzugefügt ✓";
+    setTimeout(() => btn.textContent = "In den Warenkorb", 900);
+  });
+</script>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container footer-inner">
+    <nav aria-label="Footer Navigation">
+      <ul class="footer-links">
+        <li><a href="../accessibility/index.html">Barrierefreiheit</a></li>
+        <li><a href="../licenses/index.html">Lizenz</a></li>
+        <li><a href="../privacy/index.html">Datenschutz</a></li>
+        <li><a href="../contact/index.html">Kontakt</a></li>
+        <li><a href="../imprint/index.html">Impressum &amp; Offenlegung</a></li>
+        <li><a href="../credits/index.html">Credits</a></li>
+      </ul>
+    </nav>
+    <p class="small">© <span id="year"></span> NovaNest – Demo-Webshop</p>
+  </div>
+</footer>
+
+<div id="cookieBanner" class="cookie-banner" aria-hidden="true" role="region" aria-label="Cookie Hinweis">
+  <p><strong>Cookies (Demo):</strong> Diese Website nutzt im Demo-Modus optionale Analyse-Cookies. Du kannst zustimmen oder ablehnen.</p>
+  <p class="small">Mehr Infos in der <a href="../privacy/index.html">Datenschutzerklärung</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn" type="button" data-consent="accepted">Zustimmen</button>
+    <button class="btn btn--ghost" type="button" data-consent="rejected">Ablehnen</button>
+  </div>
+</div>
+
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>

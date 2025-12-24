@@ -1,0 +1,13 @@
+/* Light page-level tweaks */
+.product-hero{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items:start;
+}
+@media (max-width: 860px){
+  .product-hero{ grid-template-columns: 1fr; }
+}
+.price{ font-size: 1.25rem; font-weight: 900; }
+.bullets{ padding-left: 1.2rem; }
+hr{ border:0; border-top:1px solid var(--border); margin: 1.5rem 0; }

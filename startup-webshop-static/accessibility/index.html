@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Barrierefreiheit – NovaNest</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="Startseite NovaNest">
+      <img class="brand__logo" src="../assets/img/logo.svg" alt="" aria-hidden="true" />
+      <span class="brand__name">NovaNest</span>
+    </a>
+
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-list">
+        <li><a href="../index.html" data-nav="home">Start</a></li>
+        <li><a href="../shop/index.html" data-nav="shop">Shop</a></li>
+        <li><a href="../cart/index.html" data-nav="cart">Warenkorb</a></li>
+        <li><a href="../about-us/index.html" data-nav="about">About us</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn--ghost" href="../cart/index.html" aria-label="Zum Warenkorb">
+        Warenkorb <span id="cartCount" class="badge" aria-label="Artikel im Warenkorb">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+  <main id="main" class="container" tabindex="-1">
+    
+<h1>Barrierefreiheitserklärung</h1>
+<p>Diese Erklärung zur Barrierefreiheit gilt für den Demo-Webshop <strong>NovaNest</strong>.</p>
+
+<section aria-labelledby="statusTitle">
+  <h2 id="statusTitle">Konformitätsstatus</h2>
+  <p>Diese Website ist nach bestem Wissen so umgesetzt, dass sie die Anforderungen der WCAG 2.2 auf Konformitätsstufe AA erfüllt (Übungsprojekt).</p>
+</section>
+
+<section aria-labelledby="methodTitle">
+  <h2 id="methodTitle">Erstellung &amp; Prüfmethoden</h2>
+  <ul class="bullets">
+    <li>Selbsttest mit Tastaturbedienung (Tab/Shift+Tab, Enter, Space)</li>
+    <li>Automatisierte Prüfung mit Browser-Tools (z. B. Axe / WAVE) – bitte Datum ergänzen</li>
+  </ul>
+  <p class="small">Zuletzt überprüft: 2025-12-24 (Demo).</p>
+</section>
+
+<section aria-labelledby="feedbackTitle">
+  <h2 id="feedbackTitle">Feedback &amp; Kontakt</h2>
+  <p>Wenn dir Barrieren auffallen, kontaktiere uns bitte:</p>
+  <ul class="bullets">
+    <li>E-Mail: <a href="mailto:support@example.com">support@example.com</a></li>
+    <li>Kontaktformular: <a href="../contact/index.html">Kontakt</a></li>
+  </ul>
+</section>
+
+<section aria-labelledby="limitsTitle">
+  <h2 id="limitsTitle">Bekannte Einschränkungen</h2>
+  <p>Derzeit sind keine bekannten Einschränkungen dokumentiert. Falls du welche findest, werden sie hier ergänzt (Übungsprojekt).</p>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container footer-inner">
+    <nav aria-label="Footer Navigation">
+      <ul class="footer-links">
+        <li><a href="../accessibility/index.html">Barrierefreiheit</a></li>
+        <li><a href="../licenses/index.html">Lizenz</a></li>
+        <li><a href="../privacy/index.html">Datenschutz</a></li>
+        <li><a href="../contact/index.html">Kontakt</a></li>
+        <li><a href="../imprint/index.html">Impressum &amp; Offenlegung</a></li>
+        <li><a href="../credits/index.html">Credits</a></li>
+      </ul>
+    </nav>
+    <p class="small">© <span id="year"></span> NovaNest – Demo-Webshop</p>
+  </div>
+</footer>
+
+<div id="cookieBanner" class="cookie-banner" aria-hidden="true" role="region" aria-label="Cookie Hinweis">
+  <p><strong>Cookies (Demo):</strong> Diese Website nutzt im Demo-Modus optionale Analyse-Cookies. Du kannst zustimmen oder ablehnen.</p>
+  <p class="small">Mehr Infos in der <a href="../privacy/index.html">Datenschutzerklärung</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn" type="button" data-consent="accepted">Zustimmen</button>
+    <button class="btn btn--ghost" type="button" data-consent="rejected">Ablehnen</button>
+  </div>
+</div>
+
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>

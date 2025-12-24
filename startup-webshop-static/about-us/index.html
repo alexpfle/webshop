@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About us – NovaNest</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="Startseite NovaNest">
+      <img class="brand__logo" src="../assets/img/logo.svg" alt="" aria-hidden="true" />
+      <span class="brand__name">NovaNest</span>
+    </a>
+
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-list">
+        <li><a href="../index.html" data-nav="home">Start</a></li>
+        <li><a href="../shop/index.html" data-nav="shop">Shop</a></li>
+        <li><a href="../cart/index.html" data-nav="cart">Warenkorb</a></li>
+        <li><a href="../about-us/index.html" data-nav="about">About us</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn--ghost" href="../cart/index.html" aria-label="Zum Warenkorb">
+        Warenkorb <span id="cartCount" class="badge" aria-label="Artikel im Warenkorb">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+  <main id="main" class="container" tabindex="-1">
+    
+<h1>About us</h1>
+<p><strong>NovaNest</strong> ist ein fiktives Start-up (Übungsprojekt) und vertreibt Software über diesen Webshop.</p>
+
+<section aria-labelledby="companyTitle">
+  <h2 id="companyTitle">Unternehmen (Demo-Definition)</h2>
+  <ul class="bullets">
+    <li><strong>Name:</strong> NovaNest Software e.U. (Demo)</li>
+    <li><strong>Standort:</strong> Wien, Österreich (Demo)</li>
+    <li><strong>Mitarbeiter:</strong> 5 (Demo)</li>
+    <li><strong>Geschäftsmodell:</strong> Einmalverkauf (Demo) + optionales Upgrade (Demo)</li>
+  </ul>
+</section>
+
+<hr />
+
+<section aria-labelledby="marksTitle">
+  <h2 id="marksTitle">Markenformen (3 Formen)</h2>
+  <img src="../assets/img/marks.svg" alt="Übersicht der Markenformen: Wortmarke, Bildmarke, Klangmarke" loading="lazy" />
+  <ol class="bullets">
+    <li><strong>Wortmarke:</strong> „NovaNest“ (Name der Produktlinie).</li>
+    <li><strong>Bild-/Figurmarke:</strong> Das kreisförmige Nest-Symbol (Logo).</li>
+    <li><strong>Klangmarke:</strong> Kurzer Jingle (Audio-Datei): 
+      <audio controls>
+        <source src="../assets/audio/nova-jingle.wav" type="audio/wav" />
+      </audio>
+    </li>
+  </ol>
+</section>
+
+<hr />
+
+<section aria-labelledby="nizzaTitle">
+  <h2 id="nizzaTitle">Nizza-Klassen (Beispiel)</h2>
+  <p>Beispielhafte Zuordnung (bitte an dein tatsächliches Produkt anpassen):</p>
+  <ul class="bullets">
+    <li><strong>Klasse 9:</strong> Herunterladbare Software</li>
+    <li><strong>Klasse 42:</strong> Software-/IT-Dienstleistungen (z. B. SaaS, Hosting, Support)</li>
+  </ul>
+  <p class="small">Dokumentiere deine Recherche (z. B. TMview/EUIPO) mit Datum und Suchbegriffen im Projekt-README oder als Screenshot im Repo.</p>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container footer-inner">
+    <nav aria-label="Footer Navigation">
+      <ul class="footer-links">
+        <li><a href="../accessibility/index.html">Barrierefreiheit</a></li>
+        <li><a href="../licenses/index.html">Lizenz</a></li>
+        <li><a href="../privacy/index.html">Datenschutz</a></li>
+        <li><a href="../contact/index.html">Kontakt</a></li>
+        <li><a href="../imprint/index.html">Impressum &amp; Offenlegung</a></li>
+        <li><a href="../credits/index.html">Credits</a></li>
+      </ul>
+    </nav>
+    <p class="small">© <span id="year"></span> NovaNest – Demo-Webshop</p>
+  </div>
+</footer>
+
+<div id="cookieBanner" class="cookie-banner" aria-hidden="true" role="region" aria-label="Cookie Hinweis">
+  <p><strong>Cookies (Demo):</strong> Diese Website nutzt im Demo-Modus optionale Analyse-Cookies. Du kannst zustimmen oder ablehnen.</p>
+  <p class="small">Mehr Infos in der <a href="../privacy/index.html">Datenschutzerklärung</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn" type="button" data-consent="accepted">Zustimmen</button>
+    <button class="btn btn--ghost" type="button" data-consent="rejected">Ablehnen</button>
+  </div>
+</div>
+
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>

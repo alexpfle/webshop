@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380" role="img" aria-label="Markenformen Übersicht">
+  <rect width="900" height="380" rx="28" fill="#F6F7FB"/>
+  <g transform="translate(60,60)">
+    <rect width="240" height="260" rx="20" fill="#0B1220"/>
+    <text x="24" y="52" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="20" fill="#D7E0FF">Wortmarke</text>
+    <text x="24" y="130" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="40" fill="#ffffff" font-weight="800">NovaNest</text>
+  </g>
+  <g transform="translate(330,60)">
+    <rect width="240" height="260" rx="20" fill="#111B33"/>
+    <text x="24" y="52" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="20" fill="#D7E0FF">Bildmarke</text>
+    <circle cx="120" cy="150" r="62" fill="#ffffff" opacity="0.9"/>
+    <circle cx="140" cy="135" r="18" fill="#111B33"/>
+  </g>
+  <g transform="translate(600,60)">
+    <rect width="240" height="260" rx="20" fill="#23306A"/>
+    <text x="24" y="52" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="20" fill="#D7E0FF">Klangmarke</text>
+    <path d="M50 190c20-40 40-40 60 0s40 40 60 0 40-40 60 0" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+    <text x="24" y="230" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="16" fill="#D7E0FF">Jingle (Audio-Datei)</text>
+  </g>
+</svg>
